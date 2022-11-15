@@ -35,17 +35,17 @@ app.include_router(posts.router)
 app.include_router(users.router)
 app.include_router(auth.router)
 app.include_router(votes.router)
-while True:
+# while True:
 
-    try:
-        conn = psycopg2.connect(host='localhost', database='fastapi', user='postgres', password='postgres', cursor_factory= RealDictCursor)
-        cursor = conn.cursor()
-        print('Database connection succesfull')
-        break
-    except Exception as error:
-        print("Connection to database failed")
-        print("error: ", error)
-        time.sleep(2)
+#     try:
+#         conn = psycopg2.connect(host='localhost', database='fastapi', user='postgres', password='postgres', cursor_factory= RealDictCursor)
+#         cursor = conn.cursor()
+#         print('Database connection succesfull')
+#         break
+#     except Exception as error:
+#         print("Connection to database failed")
+#         print("error: ", error)
+#         time.sleep(2)
 
 
 ctx = snowflake.connector.connect(
