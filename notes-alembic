@@ -1,0 +1,24 @@
+**ALEMBIC **
+
+-init project
+
+alembic init alembic (creates alembic folder and almebic.ini )
+
+-set database config on alembic/env.py
+target_metadata=Base.metadata
+
+-set db url on alembic.ini
+sqlalchemy.url = postgresql://user:pass@localhost:5432/dbname
+
+-on alembic/env.py
+from app.config import settings
+config.set_main_option("sqlalchemy.url", f"postgresql://{settings.database_username}:{settings.database_password}@{settings.database_hostname}:{settings.database_port}/{settings.database_name}"))
+
+- make a revision
+alembic revision -m "description of changes" 
+alembic upgrade revisionid
+alembic downgrade revisionid
+
+alembic heads (points to the id of the latest revision)
+
+
