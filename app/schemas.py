@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import Optional
+from typing import List, Optional
 from pydantic import BaseModel, EmailStr, conint
 
 # pydantic checks the object has this values otherwise throws an error or use the default values
@@ -16,6 +16,7 @@ class PostCreate(PostBase):
 class UserCreate(BaseModel):
     email: EmailStr
     password: str
+    
 
 class UserResponse(BaseModel):
     id: int

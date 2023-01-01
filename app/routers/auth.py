@@ -18,7 +18,7 @@ def login(user_credentials: OAuth2PasswordRequestForm = Depends(), db: Session =
     if not user:
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail=" wrong user or password")
 
-    
+    print(f"Password  : {user.password}")
     if not utils.verify(user_credentials.password, user.password):
          raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail=" wrong user or password")
 

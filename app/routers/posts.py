@@ -3,6 +3,7 @@
 from typing import List, Optional
 
 from fastapi import APIRouter, Depends, HTTPException, status
+
 from psycopg2.extras import RealDictCursor
 from sqlalchemy.orm import Session
 from sqlalchemy import func
@@ -43,11 +44,11 @@ def get_posts(db: Session = Depends(get_db),
 @router.get("/{id}",response_model=schemas.PostResponse)
 def get_post_by_id(id: int, db: Session = Depends(get_db)):
     
-    # sql connection
+   # sql connection
     # cursor.execute(""" select * from posts p where p.id = %s  """,(str(id)))
     # target = cursor.fetchone()
     # if target == None:
-      #  raise HTTPException(status.HTTP_404_NOT_FOUND, f"Post with {id} not found") 
+    #    raise HTTPException(status.HTTP_404_NOT_FOUND, f"Post with {id} not found") 
 
     # return {"data":target}
 

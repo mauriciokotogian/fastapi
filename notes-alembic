@@ -20,5 +20,6 @@ alembic upgrade revisionid
 alembic downgrade revisionid
 
 alembic heads (points to the id of the latest revision)
+alembic revision --autogenerate -m "some message" (creates all automatic from model)
 
 
